@@ -189,7 +189,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 hero-gradient inline-block relative">
-              How InsightQuest Works
+              How TASK-fi Works
               <div className="absolute -bottom-2 left-1/4 right-1/4 h-1 bg-gradient-to-r from-transparent via-brand-purple/40 to-transparent"></div>
             </h2>
             <p className="text-lg text-gray-300 max-w-2xl mx-auto">
@@ -325,7 +325,7 @@ const Index = () => {
       <Dialog open={usernameDialogOpen} onOpenChange={setUsernameDialogOpen}>
         <DialogContent className="glass-card border-brand-purple/20 sm:max-w-md">
           <DialogHeader>
-            <DialogTitle className="text-center text-xl">Welcome to InsightQuest!</DialogTitle>
+            <DialogTitle className="text-center text-xl">Welcome to TASK-fi!</DialogTitle>
           </DialogHeader>
           <div className="py-4">
             <p className="text-center text-gray-400 mb-4">Would you like to set a username for your profile?</p>

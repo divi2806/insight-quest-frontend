@@ -228,7 +228,7 @@ const BusinessPage = () => {
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-6">Ready to transform your team's productivity?</h2>
             <p className="text-xl text-gray-400 mb-8">
-              Join forward-thinking organizations that are already using InsightQuest to boost engagement and performance.
+              Join forward-thinking organizations that are already using TASK-fi to boost engagement and performance.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Button className="purple-gradient text-base px-8 py-6" size="lg">

@@ -133,11 +133,11 @@ const Header = ({ mobileMenuOpen, setMobileMenuOpen }: HeaderProps) => {
           <Link to="/" className="flex items-center gap-2 group">
             <div className="relative h-8 w-8 overflow-hidden rounded-full bg-gradient-to-r from-brand-purple to-brand-purple-dark purple-glow group-hover:animate-pulse transition-all duration-300">
               <div className="absolute inset-0 flex items-center justify-center text-white font-bold">
-                IQ
+                $
               </div>
             </div>
             <span className="text-xl font-bold bg-gradient-to-r from-brand-purple to-brand-purple-dark text-transparent bg-clip-text group-hover:from-brand-purple-dark group-hover:to-brand-purple transition-all duration-300">
-              InsightQuest
+              TASK-fi
             </span>
           </Link>
         </div>

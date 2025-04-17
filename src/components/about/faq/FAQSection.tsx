@@ -16,10 +16,10 @@ const FAQSection = () => {
           <Accordion type="single" collapsible className="glass-card rounded-xl overflow-hidden p-1">
             <AccordionItem value="item-1" className="border-gray-800">
               <AccordionTrigger className="px-6 py-4 hover:no-underline hover:bg-gray-800/20">
-                <span className="text-lg">What is InsightQuest?</span>
+                <span className="text-lg">What is TASK-fi?</span>
               </AccordionTrigger>
               <AccordionContent className="px-6 pt-0 pb-4 text-gray-300">
-                InsightQuest is a gamified productivity platform that rewards users with $TASK tokens for completing tasks that benefit them, such as solving LeetCode problems or watching educational content. We're combining learning with blockchain technology to create verifiable achievements and real rewards.
+                TASK-fi is a gamified productivity platform that rewards users with $TASK tokens for completing tasks that benefit them, such as solving LeetCode problems or watching educational content. We're combining learning with blockchain technology to create verifiable achievements and real rewards.
               </AccordionContent>
             </AccordionItem>
             
@@ -61,7 +61,7 @@ const FAQSection = () => {
             
             <AccordionItem value="item-6" className="border-gray-800">
               <AccordionTrigger className="px-6 py-4 hover:no-underline hover:bg-gray-800/20">
-                <span className="text-lg">How is InsightQuest financially sustainable?</span>
+                <span className="text-lg">How is TASK-fi financially sustainable?</span>
               </AccordionTrigger>
               <AccordionContent className="px-6 pt-0 pb-4 text-gray-300">
                 We generate revenue through multiple channels: (1) 2.5-5% fee from AI Agent marketplace transactions, (2) Staking fees, (3) Brand sponsorship for contests and challenges, (4) API licensing for corporate integration, (5) Subscription fees for premium features, and (6) DAO treasury management of platform resources.

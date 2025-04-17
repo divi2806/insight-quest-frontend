@@ -8,7 +8,7 @@ import {
 
 const businessFaqs = [
   {
-    question: "How does the InsightQuest API integrate with our platform?",
+    question: "How does the TASK-fi API integrate with our platform?",
     answer: "Our API seamlessly integrates with your existing platforms like Slack, MS Teams, or your custom web applications. We provide comprehensive SDK support for JavaScript, Python, and Java, along with detailed API documentation and implementation examples to make integration quick and straightforward."
   },
   {
@@ -36,7 +36,7 @@ const FaqBusiness = () => {
         <div className="text-center mb-10">
           <h2 className="text-3xl font-bold mb-4">Frequently Asked Questions</h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Everything you need to know about using InsightQuest for your business
+            Everything you need to know about using TASK-fi for your business
           </p>
         </div>
         

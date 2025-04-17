@@ -16,7 +16,7 @@ const HeroSection = () => {
             <span className="text-brand-purple font-medium text-sm">Learn • Earn • Grow</span>
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            About <span className="hero-gradient">InsightQuest</span>
+            About <span className="hero-gradient">TASK-fi</span>
           </h1>
           <p className="text-xl text-gray-200 mb-10">
             Your gamified learning journey with blockchain-verified achievements and real rewards

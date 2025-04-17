@@ -20,7 +20,7 @@ const CTASection = () => {
               <div>
                 <h2 className="text-3xl font-bold mb-4">Ready to Start Your Learning Journey?</h2>
                 <p className="text-lg text-gray-300 mb-6">
-                  Join InsightQuest today and transform your learning into rewards.
+                  Join TASK-fi today and transform your learning into rewards.
                 </p>
                 <div className="flex flex-wrap gap-4">
                   {isConnected ? (

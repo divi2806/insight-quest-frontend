@@ -12,7 +12,7 @@ const MissionSection = () => {
             <div className="mb-8">
               <h2 className="text-3xl font-bold mb-4">Our Mission</h2>
               <p className="text-gray-300">
-                InsightQuest was founded with a simple but powerful mission: to transform learning into an engaging, rewarding experience in the Web3 era. We believe that knowledge acquisition should be incentivized, tracked, and celebrated.
+                TASK-fi was founded with a simple but powerful mission: to transform learning into an engaging, rewarding experience in the Web3 era. We believe that knowledge acquisition should be incentivized, tracked, and celebrated.
               </p>
             </div>
             

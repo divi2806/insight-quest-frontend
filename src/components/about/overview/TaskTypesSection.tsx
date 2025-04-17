@@ -8,7 +8,7 @@ const TaskTypesSection = () => {
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-3 hero-gradient">Task Types</h2>
           <p className="text-gray-300 max-w-2xl mx-auto">
-            InsightQuest supports various learning activities to help you build diverse skills
+            TASK-fi supports various learning activities to help you build diverse skills
           </p>
         </div>
         
