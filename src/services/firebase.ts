@@ -4,7 +4,7 @@ import { Agent, User, Task } from "@/types";
 
 // Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCnDfjtEFJDEzp8hTLzbiiMl12UiO0Apwc",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: "fir-auth-ccbfc.firebaseapp.com",
   projectId: "fir-auth-ccbfc",
   storageBucket: "fir-auth-ccbfc.firebasestorage.app",
