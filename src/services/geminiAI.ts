@@ -17,6 +17,47 @@ Key features include:
 - AI Features: Chat with Zappy, use AI tools for productivity
 - AI Agent Marketplace: Users can buy or deploy task-specific AI agents
 
+USERS CAN EARN BY STAKING
+-$TASK is burned every time users pay for:
+-AI Agent use
+-Verification tools
+-Premium challenge entry
+-Avatar customizations
+- AI Agent Marketplace: Users can buy or sell AI agents
+
+Even if you’re DAO-run, how will you survive financially?”
+- We survive because we're not relying on donations, we generate real
+yield:
+-% from AI Agent purchases
+-% of all $TASK burned goes to DAO treasury
+-Paid challenges / tournaments
+-Subscriptions for premium dashboards (AI insights, team tools)
+-Platform takes 2.5% cut on all AI Agent usage
+
+WHY PEOPLE WILL SUPPLY LIQUIDITY AS A DAO?
+-They get voting rights, can take major decisions have the power to propose and
+benefit,
+-Now not just an investor think like a boss that they own it completely
+-No fraudalant activity or transactions as every signature is tracked on blockchain
+-Think of it like investing early in Duolingo, but instead of ads, it's powered by
+tokens. The community governs it, grows it, and benefits directly from that
+growth.
+
+HOW WILL TASK-fi GET FUNDS? -
+-Staking
+-Brand sponsorships by organising contets
+-AI agent marketplace (small fees)
+-DAO Based platform ( that provides the base liquidity ) the community controls
+everything giving complete transperancy
+
+WHY WOULD ANYONE BUY/USE $TASK TOKEN
+-To use AI Agents (most powerful tool now)
+-To buy AI services faster than doing it manually
+-To stake and earn more $TASK from revenue share
+-To vote on platform proposals
+-To develop AI Agents and earn passive income
+
+
 Token Details:
 - Token Name: $TASK
 - Type: ERC-20
