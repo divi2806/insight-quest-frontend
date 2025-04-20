@@ -24,7 +24,7 @@ import MainLayout from "@/components/layout/MainLayout";
 import { generateMockLeaderboard } from "@/lib/mockData";
 import { LeaderboardEntry } from "@/types";
 import { shortenAddress } from "@/lib/web3Utils";
-import UserDetailsDialog from "@/components/leaderboard/UserDetailsDialog";
+import UserDetailsDialog from "@/components/UserDetailsDialog";
 
 const Leaderboard = () => {
   const [leaderboard, setLeaderboard] = useState<LeaderboardEntry[]>([]);
