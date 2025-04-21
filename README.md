@@ -1,4 +1,4 @@
-# InsightQuest
+# TASK-fi
 
 A DAO-based productivity platform that rewards users with $TASK tokens for completing productivity tasks and provides an AI agent marketplace.
 
@@ -17,11 +17,11 @@ A DAO-based productivity platform that rewards users with $TASK tokens for compl
 
 ## Overview
 
-InsightQuest is a decentralized productivity platform built on the Web3 ecosystem that incentivizes users through the $TASK token economy. The platform enables users to earn rewards for completing productivity tasks like solving LeetCode problems or watching educational content, while also providing an AI agent marketplace where users can purchase productivity tools using $TASK tokens.
+TASK-fi is a decentralized productivity platform built on the Web3 ecosystem that incentivizes users through the $TASK token economy. The platform enables users to earn rewards for completing productivity tasks like solving LeetCode problems or watching educational content, while also providing an AI agent marketplace where users can purchase productivity tools using $TASK tokens.
 
 ### Core Concept
 
-Think of InsightQuest as "Duolingo + ChatGPT + GitHub Copilot + Token Economy":
+Think of TASK-fi as "Duolingo + ChatGPT + GitHub Copilot + Token Economy":
 
 - **Earn** tokens by completing productive tasks
 - **Purchase** AI agents to automate workflows
@@ -144,7 +144,7 @@ bun run build
 
 ## Revenue Model
 
-InsightQuest generates revenue through multiple transparent channels that benefit both the platform and the community:
+TASK-fi generates revenue through multiple transparent channels that benefit both the platform and the community:
 
 ### 1. AI Agent Marketplace Commission (2.5%)
 - Platform takes a 2.5% commission on all AI agent transactions
@@ -393,11 +393,11 @@ contract AgentMarketplace is Ownable, ReentrancyGuard {
 ### Phase 5: Business Model Enhancement
 - Enterprise solutions for corporate clients
 - API integration services for other platforms
-- Developer SDK for the InsightQuest ecosystem
+- Developer SDK for the TASK-fi ecosystem
 
 ## Contributing
 
-We welcome contributions to InsightQuest! Please see our [CONTRIBUTING.md](CONTRIBUTING.md) for details on how to get involved.
+We welcome contributions to TASK-fi! Please see our [CONTRIBUTING.md](CONTRIBUTING.md) for details on how to get involved.
 
 ## License
 
