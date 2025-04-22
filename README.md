@@ -1,10 +1,16 @@
 # TASK-fi
 
 A DAO-based productivity platform that rewards users with $TASK tokens for completing productivity tasks and provides an AI agent marketplace.
-
+WORKING URL MVP LINK - https://insight-quest-frontend.vercel.app/
+VIDEO DEMO - https://youtu.be/56pbpdXL96g
+(TEAM NAME - Sanatan) [Member's name - Divyansh (team lead) , Sambhav, Sameer, Sujal]
 ## Table of Contents
 
 - [Overview](#overview)
+- [Research & Insights](#research-&-insights)
+- [Why Fintech, CSR and Edtech Industry](#alignment-with-lokachakra-vision)
+- [What Problem are we solving](#what-problem-we-are-solving)
+- [Role Stakeholders flow aligning with lokachakra](#role-stakeholders-flow-mapping)
 - [Features](#features)
 - [Technical Architecture](#technical-architecture)
 - [Getting Started](#getting-started)
@@ -17,17 +23,94 @@ A DAO-based productivity platform that rewards users with $TASK tokens for compl
 
 ## Overview
 
-TASK-fi is a decentralized productivity platform built on the Web3 ecosystem that incentivizes users through the $TASK token economy. The platform enables users to earn rewards for completing productivity tasks like solving LeetCode problems or watching educational content, while also providing an AI agent marketplace where users can purchase productivity tools using $TASK tokens.
+TaskFi is a decentralized productivity platform powered by Web3 and governed by a DAO. It rewards users with $TASK tokens for completing meaningful tasks like coding, learning, or mentoring. Users can create and complete personal or peer tasks, access a marketplace of AI agents/human agents,a platform where young entrepreneurs can get knowledge tools, right services and our own customized AI to get knowledge about latest events in the startup industry,grants,fundings, sources to scale from 0-->1 and even book live human sessions (yoga, mentoring, therapy). Every action is verified (via AI or community), ensuring fairness and transparency. TaskFi turns productivity, effort, and knowledge into real economic value — making it a platform where users not only grow, but earn and contribute to a community-led ecosystem.
+
+## Research & Insights
+
+- Duolingo's 2023 revenue: $525M — majority from users paying for "accountability tools"
+- StepN’s model reached 3M users in <6 months, showing high traction for token-based fitness productivity
+- A 2022 study (Harvard) found that **reward-based habit formation increases daily retention by over 48%**
+- Users spend on average **2+ hours/day** on productive platforms — yet monetization is still one-sided
+
+## Alignment with Lokachakra Vision:
+1.) Decentralization First: TaskFi is built on a DAO model using $TASK tokens to enable transparent governance and user ownership — mirroring Lokachakra’s emphasis on DAO-led, trustless systems.
+
+2.) Gamified Productivity: Like Lokachakra’s goal to unite global talent, TaskFi rewards users for positive, self-improving behaviors (e.g., coding on LeetCode or learning via Coursera), building a culture of growth and collaboration.
+
+3.) AI and Tokenization: From agent marketplaces to verification tools, TaskFi heavily uses AI and token-based economics to democratize access to productivity tools — echoing Lokachakra’s emphasis on AI agents, tokenized contributions, and global inclusion.
+
+4.) Fintech Fit:
+TaskFi introduces a micro-incentive economy where $TASK tokens are earned, staked, burned, and spent — creating real token utility and a circular economy.
+It includes staking, reward yield mechanisms, and fee-driven monetization strategies — making it relevant for decentralized finance (DeFi) enthusiasts and FinTech innovators.
+
+5.) EdTech Fit:
+The platform incentivizes skill-building via real-world tasks such as coding practice and online course completions.
+With a streak system, gamification, verification, and AI tutoring agents, TaskFi serves as a next-gen self-learning and habit-tracking tool— ideal for students, mentors, and learners across borders.
+
+6.) CSR Fit:
+Organizations can sponsor challenges, fund bounties, or integrate TaskFi's API into their internal productivity systems — a unique way to enable impact-driven learning and community upliftment.
+NGOs or impact-focused firms can tokenize tasks that serve educational or skill-building goals, allowing them to measure and reward outcomes—fully aligning with Lokachakra’s SDG/ESG tokenization objectives.
+
+## What Problem We Are Solving
+
+Millions of users spend hours every day doing valuable microtasks — like learning to code, improving mental health, consuming educational content, or completing personal goals. Yet:
+
+- These efforts are **unrewarded or underpaid**
+- Most platforms are **centralized**, with no user ownership or governance
+- There's **no structured incentive loop** to keep users consistently engaged
+- Users need both **technical and human support** to stay motivated — but there's no unified space for this
+
+## Role stakeholders flow mapping 
+User/Individual Learner (e.g., Student, Developer, Self-learner)
+1.) Onboard using MetaMask
+2.) Complete daily tasks (e.g., solve coding problems, complete Coursera lessons)
+3.) Earn $TASK tokens based on verified proof of work
+4.) Use $TASK for AI features like streak boosts or image verification
+5.) Join challenges or tournaments
+6.) Stake tokens for multipliers, contest access, and DAO rights
+
+🧑‍🏫 Mentors / Educators / AI Agent Creators
+1.) Deploy custom AI agents (e.g., code reviewer, daily planner)
+2.) Earn $TASK when others use their agent (creator economy)
+3.) Gain recognition and revenue through transparent usage tracking
+4.) Propose new learning tools via DAO
+
+👥 Community Members / Validators
+1.) Validate task submissions manually or via AI
+2.) Earn volunteer points, karma, and $TASK tokens
+3.) Participate in governance
+4.) Help onboard and moderate communities
+
+🏢 Enterprises / CSR Organizations / Institutions
+1.) Integrate TaskFi API into Slack, Discord, LMS, or productivity tools
+2.) Pay in $TASK to run employee learning contests or incentive systems
+3.) Sponsor branded challenges
+4.) Track learning progress via tokenized logs
+
+📊 Investors / Token Holders / DAO Participants
+1.) Provide liquidity or stake $TASK
+2.) Vote on proposals for ecosystem development
+3.) Receive proportional revenue share from platform activities
+4.) Shape governance, roadmap, and reward structures
+
+⚖️ Regulatory / Legal / Audit
+1.) Audit smart contracts and fund movements
+2.) Ensure compliance through open-source documentation
+3.) Can interact via DAO with proposal voting (as advisors)
+
 
 ### Core Concept
 
-Think of TASK-fi as "Duolingo + ChatGPT + GitHub Copilot + Token Economy":
-
-- **Earn** tokens by completing productive tasks
-- **Purchase** AI agents to automate workflows
-- **Create** and sell your own AI agents
-- **Participate** in DAO governance
-- **Compete** in productivity contests
+Think of TaskFi as "Duolingo + ChatGPT + Headspace + Upwork + Web3", combined with a token economy:
+ -**Earn $TASK** by completing productive, verifiable tasks
+ -**Use or create AI agents** to automate productivity workflows
+ -**Get access to tools** and assistance as a young founder you need to scale from 0--->1
+ -**For business** - Reward your employees and track their productivity transparently and gain insights of employees activities during the working hours
+ -**Access or offer human-led sessions** (e.g., yoga, mentorship, therapy)
+ -**Deploy your own AI/human agents** and earn per usage
+-**Vote** on features, rules, and platform direction via DAO
+ -**Compete** in gamified challenges and boost reputation
+ -**Stake tokens** for exclusive access and returns
 
 ## Features
 
@@ -36,19 +119,24 @@ Think of TASK-fi as "Duolingo + ChatGPT + GitHub Copilot + Token Economy":
 - LeetCode problem solving
 - Educational content consumption
 - Daily login streaks
+- STAKING $TASK tokens for 8-10% APY depending upon type of nodes
 
 ### Verification Layer
 - AI-based verification of task completion
 - Community verification system
 - Proof submission and validation
+- Using FRACTAL-id for unique user and KYC 
 
-### AI Agent Marketplace
+### AI/Human Agent Marketplace
 - Purchase AI agents using $TASK tokens
 - Deploy and monetize your own AI agents
-- Revenue sharing: 97.5% to creators, 2.5% platform fee
+- Revenue sharing: 97.5% to creators, 2.5% platform fee ( can be reduced to 0.5% with cross-chain given we get enough liquidity
+- Can also provide services as a freelancer (for a startup that requires financial expertise,legalties [can list the services for $TASK tokens])
+
 
 ### Zappy Chat
 - Personal AI assistant for planning and brainstorming
+- Trained on our own data for startups and web3
 - Customizable features with $TASK tokens
 
 ### Contests & Challenges
