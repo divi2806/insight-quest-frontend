@@ -224,7 +224,7 @@ const Dashboard = () => {
       console.log(`Attempting to verify LeetCode username: ${verificationUsername}`);
       
       // Call your FastAPI backend with proper headers
-      const response = await fetch('https://backend-insightquest-333055764507.asia-south1.run.app/api/verify/leetcode', {
+      const response = await fetch('https://backend-insightquest-eth-333055764507.asia-south2.run.app/api/verify/leetcode', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -259,7 +259,7 @@ const Dashboard = () => {
         toast.info("Trying alternative verification method...");
         const walletAddress = address;
         
-        const altResponse = await fetch('https://backend-insightquest-333055764507.asia-south1.run.app/api/verify/leetcode/alt', {
+        const altResponse = await fetch('https://backend-insightquest-eth-333055764507.asia-south2.run.app/api/verify/leetcode/alt', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
