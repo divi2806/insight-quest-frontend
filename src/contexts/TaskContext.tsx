@@ -205,7 +205,7 @@ export const TaskProvider = ({ children }: { children: ReactNode }) => {
         
         try {
           // Call our verification API
-          const response = await fetch('https://backend-insightquest-333055764507.asia-south1.run.app/api/verify/leetcode-task', {
+          const response = await fetch('https://backend-insightquest-eth-333055764507.asia-south2.run.app/api/verify/leetcode-task', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
