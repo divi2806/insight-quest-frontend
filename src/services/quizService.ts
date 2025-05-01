@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'https://backend-insightquest-333055764507.asia-south1.run.app/api'; // Adjust this to your backend URL
+const API_URL = 'https://backend-insightquest-eth-333055764507.asia-south2.run.app/api'; // Adjust this to your backend URL
 
 export interface QuizQuestion {
   category: string;
