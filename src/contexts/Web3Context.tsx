@@ -8,7 +8,7 @@ import LevelUpDialog from '@/components/notifications/LevelUpDialog';
 import TokenService from '../lib/tokenContract';
 
 // Sepolia chain info
-const SEPOLIA_CHAIN_ID = '0x14a34';  // Hex value for Sepolia testnet (11155111 in decimal)
+const SEPOLIA_CHAIN_ID = '0x14a34';  // Hex value for base Sepolia testnet (84532 in decimal)
 const SEPOLIA_RPC_URL = 'https://84532.rpc.thirdweb.com';
 
 interface Web3ContextType {
