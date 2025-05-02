@@ -8,8 +8,8 @@ import LevelUpDialog from '@/components/notifications/LevelUpDialog';
 import TokenService from '../lib/tokenContract';
 
 // Sepolia chain info
-const SEPOLIA_CHAIN_ID = '0xaa36a7';  // Hex value for Sepolia testnet (11155111 in decimal)
-const SEPOLIA_RPC_URL = 'https://sepolia.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161';
+const SEPOLIA_CHAIN_ID = '0x14a34';  // Hex value for Sepolia testnet (11155111 in decimal)
+const SEPOLIA_RPC_URL = 'https://84532.rpc.thirdweb.com';
 
 interface Web3ContextType {
   isConnected: boolean;
@@ -131,17 +131,17 @@ export const Web3Provider = ({ children }: { children: ReactNode }) => {
                       symbol: 'ETH',
                       decimals: 18,
                     },
-                    blockExplorerUrls: ['https://sepolia.etherscan.io/'],
+                    blockExplorerUrls: ['https://base-sepolia.blockscout.com/'],
                   },
                 ],
               });
               return true;
             } catch (addError) {
-              console.error('Error adding Sepolia network:', addError);
+              console.error('Error adding Base Sepolia network:', addError);
               return false;
             }
           }
-          console.error('Error switching to Sepolia network:', switchError);
+          console.error('Error switching to Base Sepolia network:', switchError);
           return false;
         }
       }
@@ -159,7 +159,7 @@ export const Web3Provider = ({ children }: { children: ReactNode }) => {
     const handleChainChanged = async (chainId: string) => {
       if (chainId !== SEPOLIA_CHAIN_ID && isConnected) {
         toast.warning('Network Change Detected', {
-          description: 'Please use Sepolia Testnet for InsightQuest',
+          description: 'Please use Base Sepolia  for Task-fi',
           action: {
             label: 'Switch Back',
             onClick: checkAndSwitchNetwork,
@@ -438,7 +438,7 @@ export const Web3Provider = ({ children }: { children: ReactNode }) => {
           } catch (addError) {
             console.error('Error adding Sepolia network:', addError);
             toast.error('Network Switch Failed', {
-              description: 'Please manually switch to Sepolia Testnet to continue'
+              description: 'Please manually switch to Base Sepolia Testnet to continue'
             });
             setConnecting(false);
             return;
@@ -446,7 +446,7 @@ export const Web3Provider = ({ children }: { children: ReactNode }) => {
         } else {
           console.error('Error switching to Sepolia network:', switchError);
           toast.error('Network Switch Failed', {
-            description: 'Please manually switch to Sepolia Testnet to continue'
+            description: 'Please manually switch to Base Sepolia Testnet to continue'
           });
           setConnecting(false);
           return;
