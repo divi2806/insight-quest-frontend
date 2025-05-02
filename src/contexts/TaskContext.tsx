@@ -175,7 +175,7 @@ export const TaskProvider = ({ children }: { children: ReactNode }) => {
     const task = tasks.find(t => t.id === taskId) as ExtendedTask;
     if (task?.transactionInfo?.txHash) {
       // For Sepolia network
-      return `https://sepolia.etherscan.io/tx/${task.transactionInfo.txHash}`;
+      return `https://base-sepolia.blockscout.com/txs/${task.transactionInfo.txHash}`;
     }
     return null;
   };
@@ -258,7 +258,7 @@ export const TaskProvider = ({ children }: { children: ReactNode }) => {
               description: `Transaction: ${txHash.substring(0, 10)}...`,
               action: {
                 label: 'View',
-                onClick: () => window.open(`https://sepolia.etherscan.io/tx/${txHash}`, '_blank')
+                onClick: () => window.open(`https://base-sepolia.blockscout.com/txs/${txHash}`, '_blank')
               }
             });
             
@@ -312,7 +312,7 @@ export const TaskProvider = ({ children }: { children: ReactNode }) => {
             description: `Transaction: ${txHash.substring(0, 10)}...`,
             action: {
               label: 'View',
-              onClick: () => window.open(`https://sepolia.etherscan.io/tx/${txHash}`, '_blank')
+              onClick: () => window.open(`https://base-sepolia.blockscout.com/txs/${txHash}`, '_blank')
             }
           });
         } else {
@@ -382,7 +382,7 @@ export const TaskProvider = ({ children }: { children: ReactNode }) => {
             description: response.txHash ? `Transaction: ${response.txHash.substring(0, 10)}...` : undefined,
             action: response.txHash ? {
               label: 'View',
-              onClick: () => window.open(`https://sepolia.etherscan.io/tx/${response.txHash}`, '_blank')
+              onClick: () => window.open(`https://base-sepolia.blockscout.com/txs/${response.txHash}`, '_blank')
             } : undefined
           });
           
@@ -484,7 +484,7 @@ export const TaskProvider = ({ children }: { children: ReactNode }) => {
                   
                   {tasks.find(t => t.id === completedTaskId)?.transactionInfo?.txHash && (
                     <a 
-                      href={`https://sepolia.etherscan.io/tx/${tasks.find(t => t.id === completedTaskId)?.transactionInfo?.txHash}`}
+                      href={`https://base-sepolia.blockscout.com/txs/${tasks.find(t => t.id === completedTaskId)?.transactionInfo?.txHash}`}
                       target="_blank"
                       rel="noreferrer"
                       className="mt-2 text-sm flex items-center gap-1 text-brand-purple hover:underline"
