@@ -17,6 +17,7 @@ export type User = {
   stage: "Spark" | "Glow" | "Blaze" | "Nova" | "Orbit";
   lastLogin?: string;
   loginStreak?: number;
+  signatureVerified?: boolean;
 };
 
 export type Task = {
