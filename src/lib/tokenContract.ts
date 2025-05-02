@@ -12,7 +12,7 @@ const ERC20_ABI = [
 // Your custom token contract address
 const TOKEN_CONTRACT_ADDRESS = '0x4f87b9dE9Dd8F13EC323C0eDfb082c1363BafBb7';
 // The address where contest entry fees should be sent
-const RECEIVER_ADDRESS = '0x22254eA9fBF6bA715CdCe91Dd453704B12Aa67d4';
+const RECEIVER_ADDRESS = '0xDb81C44dF00945B69A1301edc9268FED0e5D6A12';
 
 export const TokenService = {
   // Get the token balance for a user
