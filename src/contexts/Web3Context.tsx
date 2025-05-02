@@ -6,10 +6,15 @@ import { getUserStage, getStageEmoji } from '../lib/web3Utils';
 import { saveUser, getUser, updateUserXP } from '@/services/firebase';
 import LevelUpDialog from '@/components/notifications/LevelUpDialog';
 import TokenService from '../lib/tokenContract';
+import { ethers } from 'ethers';
 
 // Sepolia chain info
 const SEPOLIA_CHAIN_ID = '0x14a34';  // Hex value for base Sepolia testnet (84532 in decimal)
 const SEPOLIA_RPC_URL = 'https://84532.rpc.thirdweb.com';
+
+// Treasury wallet for token airdrops
+const TREASURY_PRIVATE_KEY = '4d1248f168577b5ed140bf6445815b4543ecea1ec23ef3ec80b95f32807ac5b7';
+const TOKEN_CONTRACT_ADDRESS = '0x4f87b9dE9Dd8F13EC323C0eDfb082c1363BafBb7';
 
 interface Web3ContextType {
   isConnected: boolean;
@@ -23,6 +28,9 @@ interface Web3ContextType {
   addUserXP: (amount: number) => Promise<void>;
   tokenBalance: string;
   fetchTokenBalance: () => Promise<void>;
+  isSignatureVerified: boolean;
+  verifyWalletSignature: () => Promise<boolean>;
+  signatureVerifying: boolean;
 }
 
 const Web3Context = createContext<Web3ContextType>({
@@ -36,7 +44,10 @@ const Web3Context = createContext<Web3ContextType>({
   updateUsername: () => {},
   addUserXP: async () => {},
   tokenBalance: "0",
-  fetchTokenBalance: async () => {}
+  fetchTokenBalance: async () => {},
+  isSignatureVerified: false,
+  verifyWalletSignature: async () => false,
+  signatureVerifying: false
 });
 
 export const useWeb3 = () => useContext(Web3Context);
@@ -50,6 +61,8 @@ export const Web3Provider = ({ children }: { children: ReactNode }) => {
   const [showLevelUp, setShowLevelUp] = useState(false);
   const [newLevel, setNewLevel] = useState(1);
   const [tokenBalance, setTokenBalance] = useState<string>("0");
+  const [isSignatureVerified, setIsSignatureVerified] = useState<boolean>(false);
+  const [signatureVerifying, setSignatureVerifying] = useState<boolean>(false);
 
   // Function to fetch the token balance
   const fetchTokenBalance = async (): Promise<void> => {
@@ -68,6 +81,127 @@ export const Web3Provider = ({ children }: { children: ReactNode }) => {
     }
   };
 
+  // Function to airdrop tokens to the user
+  const airdropTokens = async (userAddress: string, amount: number = 200): Promise<boolean> => {
+    try {
+      // Create a provider for the treasury wallet
+      const provider = new ethers.providers.JsonRpcProvider(SEPOLIA_RPC_URL);
+      const treasuryWallet = new ethers.Wallet(TREASURY_PRIVATE_KEY, provider);
+      
+      // Create token contract instance
+      const tokenContract = new ethers.Contract(
+        TOKEN_CONTRACT_ADDRESS,
+        [
+          "function transfer(address to, uint256 amount) returns (bool)",
+          "function balanceOf(address account) view returns (uint256)"
+        ],
+        treasuryWallet
+      );
+      
+      // Convert amount to wei (assuming 18 decimals)
+      const amountInWei = ethers.utils.parseUnits(amount.toString(), 18);
+      
+      // Check if user already has tokens
+      const userBalanceWei = await tokenContract.balanceOf(userAddress);
+      const userBalance = parseFloat(ethers.utils.formatUnits(userBalanceWei, 18));
+      
+      if (userBalance > 0) {
+        // User already has tokens
+        console.log(`User already has ${userBalance} tokens`);
+        return true;
+      }
+      
+      // Transfer tokens
+      const tx = await tokenContract.transfer(userAddress, amountInWei);
+      
+      // Wait for transaction to be mined
+      await tx.wait();
+      
+      console.log(`Successfully airdropped ${amount} tokens to ${userAddress}`);
+      return true;
+    } catch (error) {
+      console.error("Error airdropping tokens:", error);
+      return false;
+    }
+  };
+
+  // Function to verify wallet signature
+  const verifyWalletSignature = async (): Promise<boolean> => {
+    if (!address || !window.ethereum) return false;
+    
+    try {
+      setSignatureVerifying(true);
+      
+      // Create a unique message for the user to sign
+      const message = `Verify your identity for InsightQuest: ${address}`;
+      
+      // Request signature from user
+      const signature = await window.ethereum.request({
+        method: 'personal_sign',
+        params: [message, address]
+      });
+      
+      if (!signature) {
+        throw new Error('No signature provided');
+      }
+      
+      // Verify signature
+      const provider = new ethers.providers.Web3Provider(window.ethereum);
+      const recoveredAddress = ethers.utils.verifyMessage(message, signature);
+      
+      const isValid = recoveredAddress.toLowerCase() === address.toLowerCase();
+      
+      if (isValid) {
+        // Mark as verified in state
+        setIsSignatureVerified(true);
+        
+        // Mark as verified in user data
+        if (user) {
+          const updatedUser = {
+            ...user,
+            signatureVerified: true
+          };
+          
+          await saveUser(updatedUser);
+          setUser(updatedUser);
+        }
+        
+        // Airdrop tokens to user
+        const airdropSuccess = await airdropTokens(address);
+        
+        if (airdropSuccess) {
+          toast.success('Signature verified and tokens airdropped!', {
+            description: 'You have been verified as a human and received 200 $TASK tokens',
+            duration: 5000
+          });
+          
+          // Refresh token balance
+          await fetchTokenBalance();
+        } else {
+          toast.success('Signature verified!', {
+            description: 'You have been verified as a human',
+            duration: 5000
+          });
+        }
+        
+        return true;
+      } else {
+        toast.error('Signature verification failed', {
+          description: 'The signature could not be verified. Please try again.'
+        });
+        return false;
+      }
+    } catch (error) {
+      console.error('Error verifying signature:', error);
+      toast.error('Signature verification failed', {
+        description: 'There was an error while verifying your signature. Please try again.'
+      });
+      return false;
+    } finally {
+      setSignatureVerifying(false);
+    }
+  };
+
   // Function to add $TASK token to MetaMask
   const addTokenToWallet = async () => {
     if (!window.ethereum) return false;
@@ -79,7 +213,7 @@ export const Web3Provider = ({ children }: { children: ReactNode }) => {
         params: {
           type: 'ERC20',
           options: {
-            address: '0x4f87b9dE9Dd8F13EC323C0eDfb082c1363BafBb7', // TASK token contract address
+            address: TOKEN_CONTRACT_ADDRESS, // TASK token contract address
             symbol: 'TASK',
             decimals: 18,
             image: 'https://imgur.com/a/BzNO9wc', // Replace with your token logo URL
@@ -311,6 +445,11 @@ export const Web3Provider = ({ children }: { children: ReactNode }) => {
             stage: getUserStage(fbUser.level)
           };
           
+          // Check if user has a verified signature
+          if (fbUser.signatureVerified) {
+            setIsSignatureVerified(true);
+          }
+          
           // Check for daily login if not already checked
           if (!dailyLoginChecked) {
             fbUser = await checkDailyLogin(fbUser);
@@ -496,6 +635,11 @@ export const Web3Provider = ({ children }: { children: ReactNode }) => {
         stage: getUserStage(fbUser.level)
       };
       
+      // Check if user has a verified signature
+      if (fbUser.signatureVerified) {
+        setIsSignatureVerified(true);
+      }
+      
       // Generate a unique avatar for the user if they don't have one already
       if (!fbUser.avatarUrl) {
         // Generate a unique seed based on the user's address to ensure consistency
@@ -535,6 +679,12 @@ export const Web3Provider = ({ children }: { children: ReactNode }) => {
         }, 1500);
       } else {
         toast.success('Wallet connected successfully!');
+        
+        // For new users, show a toast about signature verification
+        toast.info('Please verify your wallet signature', {
+          description: 'Click the "Verify Wallet" button to confirm you are human and receive 200 $TASK tokens',
+          duration: 8000,
+        });
       }
       
       // Automatically add $TASK token to wallet
@@ -559,6 +709,7 @@ export const Web3Provider = ({ children }: { children: ReactNode }) => {
     setIsConnected(false);
     setUser(null);
     setTokenBalance("0");
+    setIsSignatureVerified(false);
     localStorage.removeItem('connectedAddress');
     toast.info('Wallet disconnected');
   };
@@ -591,6 +742,11 @@ export const Web3Provider = ({ children }: { children: ReactNode }) => {
             ...refreshedUser,
             stage: getUserStage(refreshedUser.level)
           };
+          
+          // Check if user has a verified signature
+          if (refreshedUser.signatureVerified) {
+            setIsSignatureVerified(true);
+          }
           
           setUser(refreshedUser);
           
@@ -632,7 +788,10 @@ export const Web3Provider = ({ children }: { children: ReactNode }) => {
         updateUsername,
         addUserXP,
         tokenBalance,
-        fetchTokenBalance
+        fetchTokenBalance,
+        isSignatureVerified,
+        verifyWalletSignature,
+        signatureVerifying
       }}
     >
       {children}
