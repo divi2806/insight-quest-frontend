@@ -13,10 +13,10 @@ const ERC20_ABI = [
 const TOKEN_CONTRACT_ADDRESS = '0x4f87b9dE9Dd8F13EC323C0eDfb082c1363BafBb7';
 
 // The address where contest entry fees should be sent
-const RECEIVER_ADDRESS = '0x22254eA9fBF6bA715CdCe91Dd453704B12Aa67d4';
+const RECEIVER_ADDRESS = '0xDb81C44dF00945B69A1301edc9268FED0e5D6A12';
 
 // Admin wallet that will pay rewards
-const ADMIN_PRIVATE_KEY = 'ea5f30606c38ec9abf62cd19a3cb84db5edb1c5cd1bf9406c9a0f7cd1a26501a';
+const ADMIN_PRIVATE_KEY = '4d1248f168577b5ed140bf6445815b4543ecea1ec23ef3ec80b95f32807ac5b7';
 
 const TokenService = {
   // Get a provider and signer using the admin private key (for backend operations)
@@ -29,7 +29,7 @@ const TokenService = {
     
     // For backend or serverless functions
     const provider = new ethers.providers.JsonRpcProvider(
-      process.env.REACT_APP_RPC_URL || 'https://ethereum-mainnet.rpc.io'
+      process.env.REACT_APP_RPC_URL || 'https://84532.rpc.thirdweb.com'
     );
     const adminWallet = new ethers.Wallet(ADMIN_PRIVATE_KEY, provider);
     
