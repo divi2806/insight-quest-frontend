@@ -10,7 +10,7 @@ import { ethers } from 'ethers';
 
 // Sepolia chain info
 const SEPOLIA_CHAIN_ID = '0x14a34';  // Hex value for base Sepolia testnet (84532 in decimal)
-const SEPOLIA_RPC_URL = 'https://84532.rpc.thirdweb.com';
+const SEPOLIA_RPC_URL = 'https://chain-proxy.wallet.coinbase.com?targetName=base-sepolia';
 
 // Treasury wallet for token airdrops
 const TREASURY_PRIVATE_KEY = '4d1248f168577b5ed140bf6445815b4543ecea1ec23ef3ec80b95f32807ac5b7';
